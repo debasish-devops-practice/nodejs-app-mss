@@ -8,6 +8,10 @@ var url = process.env.url
 app.set('port', (process.env.PORT || 9981))
 app.use(express.static(__dirname + '/images'))
 
+var app = express();
+var AWSXRay = require('aws-xray-sdk');
+app.use(AWSXRay.express.openSegment('MyApp'));
+
 
 /*
 app.get("/getCall", function(req,res){ 
@@ -28,6 +32,11 @@ app.get('/mithuntechnologies', function(request, response) {
     
   })
  
+app.get('/', function (req, res) {
+  res.render('index');
+});
+
+app.use(AWSXRay.express.closeSegment());
 
 //app.get("/html", function(req,res){
 app.get("/html", function(req,res){
