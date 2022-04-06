@@ -10,7 +10,7 @@ app.use(express.static(__dirname + '/images'))
 
 var app = express();
 var AWSXRay = require('aws-xray-sdk');
-app.use(AWSXRay.express.openSegment('MyApp'));
+app.use(AWSXRay.express.openSegment('mithuntechnologies'));
 
 
 /*
