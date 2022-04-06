@@ -22,7 +22,8 @@
     "sonarqube-scanner": "^2.7.0"
   
    },
-   "aws-xray-sdk" : "1.1.2"
+   "sdk": {
+     "aws-xray-sdk" : "1.1.2"
   
   },
   "engines": {
